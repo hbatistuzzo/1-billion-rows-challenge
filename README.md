@@ -1,19 +1,19 @@
 # One Billion Rows: Data Processing Challenge with Python
 
-![GitHub top language](https://img.shields.io/github/languages/top/hbatistuzzo/desafio_devops_pro)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/hbatistuzzo/desafio_devops_pro)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hbatistuzzo/desafio_devops_pro)
-![GitHub last commit](https://img.shields.io/github/last-commit/hbatistuzzo/desafio_devops_pro)
+![GitHub top language](https://img.shields.io/github/languages/top/hbatistuzzo/1-billion-rows-challenge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/hbatistuzzo/1-billion-rows-challenge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hbatistuzzo/1-billion-rows-challenge)
+![GitHub last commit](https://img.shields.io/github/last-commit/hbatistuzzo/1-billion-rows-challenge)
 
 ## Introduction
 
 The goal of this project is to demonstrate how to efficiently process a massive data file containing 1 billion rows (~14GB), specifically to calculate statistics (including aggregation and sorting, which are heavy operations) using Python.
 
-This challenge was inspired by [The One Billion Row Challenge](https://github.com/gunnarmorling/1brc), originally proposed for Java.
+This challenge was inspired by [The One Billion Row Challenge](https://github.com/gunnarmorling/1brc), originally proposed for Java. and reworked from [lvgalvao's take on the problem](https://github.com/lvgalvao/One-Billion-Row-Challenge-Python), as part of the "Jornada de Dados" bootcamp.
 
-The data file consists of temperature measurements from various weather stations. Each record follows the format `<string: station name>;<double: measurement>`, with the temperature presented to one decimal place.
+This current project was inspired by [lvgalvao's](https://github.com/lvgalvao/One-Billion-Row-Challenge-Python) take on the famous [One Billion Row Challenge](https://github.com/gunnarmorling/1brc), originally developed for Java.
 
-Here are ten example lines from the file:
+The data file consists of temperature measurements from various weather stations. Each record follows the format `<string: station name>;<double: measurement>`, with the temperature presented to one decimal place e.g.
 
 ```
 Hamburg;12.0
@@ -91,7 +91,7 @@ DuckDB also wins with 1 million rows, truly the best.
 To execute this project and reproduce the results:
 
 1. Clone this repository.
-2. Set the Python version using `pyenv local 3.12.1`.
+2. Set the Python version using for example `pyenv local 3.12.1`.
 3. Run `poetry env use 3.12.1`, `poetry install --no-root`, and `poetry lock --no-update`.
 4. Execute the command `python src/create_measurements.py` to generate the test file.
 5. Be patient and go make a coffee; it will take about 10 minutes to generate the file.
@@ -139,3 +139,8 @@ If you don't have `pv` installed, you can easily install it using your system's 
 In this example, only the first 1000 lines will be processed.
 
 When running the script, you will see the progress bar (if pv is installed correctly) and, eventually, the expected output in the terminal or in an output file if you modify the script to direct the output.
+
+---
+
+Some observations:
+- The original challenge was made to be run in unix environments; if you're using Windows, be sure to check that you're passing the argument `encoding="utf-8"` in the build_weather_station_name_list function of create_measurements.py! Also, I've altered the "next" command following `if "#" in station:` from Next to Continue, since that's the correct usage.

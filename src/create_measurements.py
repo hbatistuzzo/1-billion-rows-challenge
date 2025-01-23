@@ -27,7 +27,7 @@ def build_weather_station_name_list():
         file_contents = file.read()
     for station in file_contents.splitlines():
         if "#" in station:
-            next
+            continue
         else:
             station_names.append(station.split(';')[0])
     return list(set(station_names))
@@ -123,7 +123,7 @@ def main():
     """
     main program function
     """
-    num_rows_to_create = 1000000
+    num_rows_to_create = 1000000000
     weather_station_names = []
     weather_station_names = build_weather_station_name_list()
     print(estimate_file_size(weather_station_names, num_rows_to_create))
