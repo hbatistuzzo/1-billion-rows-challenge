@@ -17,7 +17,7 @@ The data file consists of temperature measurements from various weather stations
 
 ```
 Hamburg;12.0
-Bulawayo;8.9s 
+Bulawayo;8.9s
 Palembang;38.8
 St. Johns;15.2
 Cracow;12.6
@@ -141,6 +141,14 @@ In this example, only the first 1000 lines will be processed.
 When running the script, you will see the progress bar (if pv is installed correctly) and, eventually, the expected output in the terminal or in an output file if you modify the script to direct the output.
 
 ---
+
+My Results:
+- using_bash_and_awk.sh: not even trying, I'm not insane
+- using_dask.py:
+- using_duckdb.py: Duckdb Took: 42.66 sec
+- using_pandas.py: Processing took: 303.01 sec
+- using_polars.py: needs fixing
+
 
 Some observations:
 - The original challenge was made to be run in unix environments; if you're using Windows, be sure to check that you're passing the argument `encoding="utf-8"` in the build_weather_station_name_list function of create_measurements.py! Also, I've altered the "next" command following `if "#" in station:` from Next to Continue, since that's the correct usage.
