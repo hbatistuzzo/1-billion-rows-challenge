@@ -9,9 +9,9 @@
 
 The goal of this project is to demonstrate how to efficiently process a massive data file containing 1 billion rows (~14GB), specifically to calculate statistics (including aggregation and sorting, which are heavy operations) using Python.
 
-This challenge was inspired by [The One Billion Row Challenge](https://github.com/gunnarmorling/1brc), originally proposed for Java. and reworked from [lvgalvao's take on the problem](https://github.com/lvgalvao/One-Billion-Row-Challenge-Python), as part of the "Jornada de Dados" bootcamp.
+This is, at heart, a performance-engineering benchmark: the same aggregation over ~1 billion rows is implemented across several approaches — pure Python, Pandas, Dask, Polars, and DuckDB (plus a Bash + awk baseline) — and their execution times are measured and compared (see [Results](#results) below).
 
-This current project was inspired by [lvgalvao's](https://github.com/lvgalvao/One-Billion-Row-Challenge-Python) take on the famous [One Billion Row Challenge](https://github.com/gunnarmorling/1brc), originally developed for Java.
+This challenge was inspired by [The One Billion Row Challenge](https://github.com/gunnarmorling/1brc), originally proposed for Java, and reworked from [lvgalvao's take on the problem](https://github.com/lvgalvao/One-Billion-Row-Challenge-Python), as part of the "Jornada de Dados" bootcamp.
 
 The data file consists of temperature measurements from various weather stations. Each record follows the format `<string: station name>;<double: measurement>`, with the temperature presented to one decimal place e.g.
 
